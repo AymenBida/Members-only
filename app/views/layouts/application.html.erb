@@ -24,8 +24,10 @@
               <a class="nav-link" href="#">Link</a>
             </li>
           </ul>
+
           <% if user_signed_in? %>
-            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-danger ml-auto' %>
+            <%= link_to current_user.email, edit_user_registration_path, class: 'ml-auto nav-link'%>
+            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-danger' %>
             <% else %>
           <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-outline-light ml-auto' %>
           <% end %>
