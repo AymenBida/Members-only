@@ -1,6 +1,7 @@
-<h1>Feed</h1>
+<h1 class="mb-3 border-bottom">Secrets so far :</h1>
 
   <% @posts.each do |post| %>
+  <div class="border rounded mb-2 p-4 mx-auto">
   <div class="d-flex align-items-baseline">
     <h2>
       <%= post.title %>
@@ -11,12 +12,9 @@
     
     </div>
     <div>
-    <p>
-      <%= post.body %>
+    <p class="ml-3 bigger-p">
+      - <%= post.body %>
     </p>
   </div>
+  </div>
   <% end %>
-
-<% if user_signed_in? %>
-  <%= render 'home' %>
-<% end %>
