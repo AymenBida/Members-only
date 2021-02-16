@@ -10,3 +10,7 @@
     </p>
   </div>
   <% end %>
+
+<% if user_signed_in? %>
+  <%= render 'home' %>
+<% end %>
