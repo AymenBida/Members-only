@@ -1,0 +1,18 @@
+<h1 class="mb-3 border-bottom">Secrets so far :</h1>
+
+  <% @posts.each do |post| %>
+  <div class="border rounded mb-2 p-4 mx-auto">
+  <div class="d-flex align-items-baseline">
+    <h2>
+      <%= post.title %>
+    </h2>
+    <%= show_user(post) %>
+    
+    </div>
+    <div>
+    <p class="ml-3 bigger-p">
+      - <%= post.body %>
+    </p>
+  </div>
+  </div>
+  <% end %>
