@@ -4,11 +4,11 @@
     <%= form_with model: @post do |f| %>
       <div class="d-flex flex-column mb-3">
         <%= f.label :title %>
-        <%= f.text_field :title %>
+        <%= f.text_field :title, required: true %>
       </div>
       <div class="d-flex flex-column mb-3">
         <%= f.label :body, 'Add a new post here' %>
-        <%= f.text_area :body %>
+        <%= f.text_area :body, required: true, maxlength: 280 %>
       </div>
       <div>
         <%= f.submit 'Submit', class: 'btn btn-dark m-auto w-100 d-block' %>
