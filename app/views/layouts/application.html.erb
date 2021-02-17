@@ -20,33 +20,15 @@
             <li class="nav-item">
               <%= link_to 'Home', root_path, class: 'nav-link active', 'aria-current': 'page' %>
             </li>
-            <% if user_signed_in? %>
-              <li class="nav-item">
-                <%= link_to 'Create a secret', new_post_path, class: 'nav-link text-white' %>
-              </li>
-            <% end %>
+            <%= create_a_secret %>
           </ul>
-          <% if user_signed_in? %>
-            <span class="ml-auto nav-link text-white"><%= current_user.name %></span>
-            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-danger' %>
-          <% else %>
-            <%= link_to 'Log in', new_user_session_path, class: 'btn btn-outline-success ml-auto' %>
-            <%= link_to 'Sign up', new_user_registration_path, class: 'ml-2 btn btn-outline-light' %>
-          <% end %>
+          <%= show_logged_in %>  
         </div>
       </div>
     </nav>
     <div class="container py-2">
-      <% if notice %>
-        <div class="alert alert-info" role="alert">
-          <%= notice %>
-        </div>
-      <% end %>
-      <% if alert %>
-        <div class="alert alert-danger" role="alert">
-          <%= alert %>
-        </div>
-      <% end %>
+      <%= show_notice %>
+      <%= show_alert %>
       <%= yield %>
     </div>
   </body>
